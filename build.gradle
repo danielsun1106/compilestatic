@@ -1,0 +1,30 @@
+plugins {
+  id 'groovy'
+  id "me.champeau.gradle.jmh" version "0.4.7"
+}
+
+group 'eu.plumbr'
+version '1.0-SNAPSHOT'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy-all:2.5.4'
+}
+
+apply plugin: "idea"
+idea {
+  module {
+    scopes.PROVIDED.plus += [configurations.jmh]
+  }
+}
+
+jmh {
+  fork = 1
+  threads = 1
+  warmupIterations = 5
+  iterations = 5
+  timeUnit = 'ns'
+}
