@@ -1,5 +1,6 @@
 package eu.plumbr;
 
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -11,9 +12,9 @@ import org.openjdk.jmh.annotations.State;
 @State(Scope.Thread)
 public class StreamBench {
 
-  private long l1 = 0;
-  private long l2 = 0;
-  private long l3 = 0;
+  private long l1 = ThreadLocalRandom.current().nextLong();
+  private long l2 = ThreadLocalRandom.current().nextLong();
+  private long l3 = ThreadLocalRandom.current().nextLong();
 
   private JavaStream javaStream = new JavaStream();
   private StaticGroovyStream staticGroovyStream = new StaticGroovyStream();
