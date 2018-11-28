@@ -1,8 +1,5 @@
 package eu.plumbr;
 
-import eu.plumbr.DynamicGroovy;
-import eu.plumbr.MainJava;
-import eu.plumbr.StaticGroovy;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
