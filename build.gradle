@@ -22,7 +22,6 @@ idea {
 }
 
 jmh {
-  include = [".*StreamBench"]
   fork = 1
   threads = 1
   warmupIterations = 5
